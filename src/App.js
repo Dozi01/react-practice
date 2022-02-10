@@ -2,36 +2,68 @@ import styles from "./App.module.css";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [toDo, setToDo] = useState("");
-  const [toDos, setToDos] = useState([]);
-  const onChange = (event) => setToDo(event.target.value);
+  const [loading, setLoading] = useState(true);
+  const [coinData, setCoinData] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const [searchCoin, setSearchCoin] = useState("");
+
+  useEffect(() => {
+    fetch("https://api.coinpaprika.com/v1/tickers")
+      .then((response) => response.json())
+      .then((json) => {
+        setCoinData(json);
+        setLoading(false);
+      });
+  }, []);
+
+  const onChange = (event) => setInputValue(event.target.value);
+
   const onSubmit = (event) => {
     event.preventDefault();
-    if (toDo == "") {
-      return;
-    }
-    setToDos((currentArray) => [toDo, ...currentArray]);
-    setToDo("");
+    setSearchCoin(inputValue);
   };
-  useEffect(() => console.log(toDos), [toDos]);
+
+  // filter coinData
+  const items = coinData
+    .filter((item) => {
+      if (searchCoin == null) {
+        return item;
+      } else if (item.name.toLowerCase().includes(searchCoin.toLowerCase())) {
+        return item;
+      }
+    })
+    .map((item) => {
+      return (
+        <li key={item.id}>
+          {item.name} : {item.quotes.USD.price}
+        </li>
+      );
+    });
+
   return (
     <div>
-      <h1>My To Dos : {toDos.length}</h1>
+      <h1>The Coins ! </h1>
+      {loading ? null : <h3>There are {coinData.length} Coins in the world</h3>}
+      {loading ? <strong>Loading...</strong> : null}
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
-          value={toDo}
+          value={inputValue}
           type="text"
-          placeholder="write your to do..."
+          placeholder="Coin"
         />
-        <button>Add To Do</button>
+        <button>Search</button>
       </form>
-      <hr />
-      <ol>
-        {toDos.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ol>
+      <div>
+        <ul>
+          {items}
+          {/* {coinData.map((coin) => (
+            <li key={coin.id}>
+              {coin.name} : {coin.quotes.USD.price} USD
+            </li>
+          ))} */}
+        </ul>
+      </div>
     </div>
   );
 }
