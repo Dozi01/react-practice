@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Movie from "../components/movie";
+import Nav from "../components/Nav";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ function Home() {
   }, []);
   return (
     <div>
-      <h1>Movie Info</h1>
+      <Nav />
       {loading ? (
         <h1>Loading...</h1>
       ) : (
