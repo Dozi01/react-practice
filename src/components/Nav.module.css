@@ -1,18 +1,13 @@
 :root {
-  --green-color-3: #41227f;
-  --green-color-2: #dcb0ff;
-  --green-color-1: #faccff;
 }
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 4px 64px;
+  padding: 0 64px;
   background-color: transparent;
-  position: fixed;
-  left: 0;
-  right: 0;
   z-index: 10;
 
   transition: 0.4s ease;
@@ -20,6 +15,7 @@
 
 .container a {
   text-decoration: none;
+  color: white;
 }
 
 .container ul {
@@ -51,10 +47,6 @@
 .icon__list li {
   font-size: 24px;
   padding: 4px 8px;
-}
-
-.icon__list li a {
-  color: var(--green-color-1);
 }
 
 .null {

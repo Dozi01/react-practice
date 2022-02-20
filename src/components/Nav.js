@@ -24,8 +24,12 @@ function Nav() {
           </li>
         </ul>
         <ul className={styles.icon__list}>
-          <li>icon1</li>
-          <li>icon2</li>
+          <li>
+            <Link to={`/`}>icon1</Link>
+          </li>
+          <li>
+            <Link to={`/`}>icon2</Link>
+          </li>
         </ul>
       </div>
     </div>
