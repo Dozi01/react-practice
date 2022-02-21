@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Movie from "../components/movie";
+import Movie from "./Movie";
 import styles from "./Nav.module.css";
 
 function Nav() {
