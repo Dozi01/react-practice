@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Movie from "./Movie";
 import styles from "./Nav.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
