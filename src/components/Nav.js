@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Movie from "./Movie";
 import styles from "./Nav.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 function Nav() {
   return (
     <div>
@@ -33,7 +33,7 @@ function Nav() {
           <li>
             <Link to={`/`}>
               {" "}
-              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faGithub} />
             </Link>
           </li>
         </ul>
