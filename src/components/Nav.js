@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Movie from "./Movie";
 import styles from "./Nav.module.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 function Nav() {
   return (
     <div>
@@ -25,10 +26,15 @@ function Nav() {
         </ul>
         <ul className={styles.icon__list}>
           <li>
-            <Link to={`/`}>icon1</Link>
+            <Link to={`/`}>
+              <FontAwesomeIcon icon={faInstagram} />
+            </Link>
           </li>
           <li>
-            <Link to={`/`}>icon2</Link>
+            <Link to={`/`}>
+              {" "}
+              <FontAwesomeIcon icon={faFacebook} />
+            </Link>
           </li>
         </ul>
       </div>
