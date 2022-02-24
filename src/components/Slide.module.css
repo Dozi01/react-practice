@@ -1,7 +1,38 @@
 .slide__container {
-  margin: 100px;
+  position: relative;
+  width: 864px;
+  margin: 32px auto;
 }
-
+.slide__show {
+  overflow: hidden;
+}
 .slide__movies {
   display: flex;
+  transition: all 200ms ease-in;
+}
+
+.slide__controller {
+  position: absolute;
+  top: 50%;
+  background-color: red;
+}
+.slide__buttonL,
+.slide__buttonR {
+  color: white;
+  font-size: 40px;
+}
+.slide__buttonL:hover,
+.slide__buttonR:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.slide__buttonL {
+  position: absolute;
+  right: 100px;
+}
+
+.slide__buttonR {
+  position: absolute;
+  left: 964px;
 }

@@ -2,18 +2,21 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Movie from "./Movie";
 import Loading from "./Loading";
-
 import styles from "./Slide.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {} from "@fortawesome/free-brands-svg-icons";
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Slide() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+  const [slideNum, setSlideNum] = useState(0);
   const getMovies = async () => {
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=.0&sort_by=year`
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=9.0&sort_by=years`
       )
     ).json();
     setMovies(json.data.movies);
@@ -22,15 +25,27 @@ function Slide() {
   useEffect(() => {
     getMovies();
   }, []);
-  console.log(movies);
+
+  const onClickR = () => {
+    setSlideNum((current) => current + 1);
+  };
+  const onClickL = () => {
+    if (slideNum === 0) {
+      return;
+    }
+    setSlideNum((current) => current - 1);
+  };
 
   return (
     <div className={styles.slide__container}>
-      <div>
+      <div className={styles.slide__show}>
         {loading ? (
           <Loading />
         ) : (
-          <div className={styles.slide__movies}>
+          <div
+            className={styles.slide__movies}
+            style={{ transform: `translateX(${-slideNum * 2 * 216}px)` }}
+          >
             {movies.map((movie) => (
               <Movie
                 key={movie.id}
@@ -44,6 +59,16 @@ function Slide() {
           </div>
         )}
       </div>
+      {loading ? null : (
+        <div className={styles.slide__controller}>
+          <div className={styles.slide__buttonL} onClick={onClickL}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </div>
+          <div className={styles.slide__buttonR} onClick={onClickR}>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
