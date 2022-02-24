@@ -1,5 +1,5 @@
 const Group_obj = {
-  "High Rating": "minimum_rating=8",
+  "High Rating": "minimum_rating=9.0",
   Romance: "genre=romance",
   Music: "genre=music",
   Animation: "genre=animation",

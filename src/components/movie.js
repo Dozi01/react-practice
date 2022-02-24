@@ -5,20 +5,20 @@ import styles from "./Movie.module.css";
 function Movie({ id, coverImg, title, summary, genres }) {
   return (
     <div className={styles.movie__container}>
-      <img className={styles.movie__img} src={coverImg} alt={title} />
-      <div className={styles.movie__description}>
-        <h2 className={styles.movie__title}>
-          <Link to={`/movie/${id}`}>{title}</Link>
-        </h2>
-        {/* <p className={styles.movie__summary}>{summary}</p> */}
-        <ul className={styles.movie__genres}>
-          {genres.map((g) => (
-            <li className={styles.movie__genre} key={g}>
-              {g}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Link to={`/movie/${id}`}>
+        <img className={styles.movie__img} src={coverImg} alt={title} />
+        <div className={styles.movie__description}>
+          <h2 className={styles.movie__title}>{title}</h2>
+          {/* <p className={styles.movie__summary}>{summary}</p> */}
+          <ul className={styles.movie__genres}>
+            {genres.map((g) => (
+              <li className={styles.movie__genre} key={g}>
+                {g}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Link>
     </div>
   );
 }

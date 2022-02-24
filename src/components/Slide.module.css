@@ -20,6 +20,8 @@
 .slide__buttonR {
   color: white;
   font-size: 40px;
+  background-color: transparent;
+  border: 0;
 }
 .slide__buttonL:hover,
 .slide__buttonR:hover {

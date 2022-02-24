@@ -1,3 +1,10 @@
-.main__container {
-  margin: 122px;
+.home__menu {
+  display: flex;
+  justify-content: center;
+  margin: 32px;
+}
+
+.home__icon {
+  font-size: 32px;
+  margin-right: 12px;
 }
