@@ -1,6 +1,3 @@
-:root {
-}
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -31,31 +28,21 @@
   display: flex;
 }
 
-.Nav__option__list li a {
+.Link {
   font-size: 16px;
-  padding: 4px 12px;
+  margin: 4px 12px;
+  transition: all 300ms ease-out;
 }
 
-.Nav__option__list li a:hover {
-  cursor: pointer;
+.Link:hover {
+  transform: translateY(-5px);
 }
 
 .icon__list {
   display: flex;
 }
 
-.icon__list li {
+.icon {
   font-size: 24px;
   padding: 4px 8px;
-}
-
-.null {
-  width: 100%;
-  height: 100px;
-}
-
-@media screen and (max-width: 1090px) {
-  .option__list {
-    display: none;
-  }
 }

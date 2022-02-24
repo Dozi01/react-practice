@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
+import Recommendation from "../components/Recommendation";
 import Slide from "../components/Slide";
 
 import styles from "./Home.module.css";
@@ -43,6 +44,7 @@ function Home() {
   // );
   return (
     <div>
+      <Recommendation />
       <Slide />
     </div>
   );

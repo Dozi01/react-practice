@@ -1,41 +1,39 @@
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
+import { Group_obj, Group_key_arr } from "../atom/NavList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 function Nav() {
   return (
     <div>
       <div className={styles.container}>
-        <h2 className={styles.title}>
+        <h1 className={styles.title}>
           <Link to={`/`}>Notflix</Link>
-        </h2>
-        <ul className={styles.Nav__option__list}>
-          <li>
-            <Link to={`/`}>High Rating</Link>
-          </li>
-          <li>
-            <Link to={`/`}>Romance</Link>
-          </li>
-          <li>
-            <Link to={`/`}>Thriller</Link>
-          </li>
-          <li>
-            <Link to={`/`}>Animation</Link>
-          </li>
-        </ul>
-        <ul className={styles.icon__list}>
-          <li>
+        </h1>
+        <div className={styles.Nav__option__list}>
+          {Group_key_arr.map((key) => {
+            return (
+              <div className={styles.Link} key={key}>
+                <div className={styles.Link_sep}>
+                  <Link to={`/page/${Group_obj[key]}/1`}>{key}</Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.icon__list}>
+          <div className={styles.icon}>
             <Link to={`/`}>
               <FontAwesomeIcon icon={faInstagram} />
             </Link>
-          </li>
-          <li>
+          </div>
+          <div className={styles.icon}>
             <Link to={`/`}>
               {" "}
               <FontAwesomeIcon icon={faGithub} />
             </Link>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

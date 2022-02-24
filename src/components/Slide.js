@@ -13,7 +13,7 @@ function Slide() {
   const getMovies = async () => {
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=.0&sort_by=year`
       )
     ).json();
     setMovies(json.data.movies);
@@ -22,13 +22,15 @@ function Slide() {
   useEffect(() => {
     getMovies();
   }, []);
+  console.log(movies);
+
   return (
     <div className={styles.slide__container}>
       <div>
         {loading ? (
           <Loading />
         ) : (
-          <div>
+          <div className={styles.slide__movies}>
             {movies.map((movie) => (
               <Movie
                 key={movie.id}

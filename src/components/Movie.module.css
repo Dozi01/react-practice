@@ -1,13 +1,14 @@
-.movie {
+.movie__container {
   display: flex;
-  padding: 12px;
-  margin: 28px 0;
+  flex-direction: column;
+  padding-bottom: 12px;
+  margin: 28px 8px;
   background-color: white;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   transition: all 0.4s ease;
 }
-.movie:hover {
+.movie__container:hover {
   transform: translateY(-10px);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -15,23 +16,25 @@
 
 .movie__img {
   width: 200px;
-  position: relative;
-  top: -50px;
-  left: 20px;
-  margin-right: 50px;
+  margin-bottom: 8px;
 }
 .movie__title a {
   text-decoration: none;
   color: black;
 }
+.movie__title {
+  font-size: 18px;
+  margin: 0;
+}
+
 .movie__description {
 }
-.movie__title {
-}
+
 .movie__genres {
   display: flex;
   flex-direction: column;
   padding: 0;
+  margin: 0;
 }
 .movie__genre {
   list-style: none;

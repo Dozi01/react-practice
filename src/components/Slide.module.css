@@ -1,3 +1,7 @@
 .slide__container {
   margin: 100px;
 }
+
+.slide__movies {
+  display: flex;
+}
