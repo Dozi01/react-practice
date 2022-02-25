@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import styles from "./Detail.module.css";
 
 function Detail() {
   const { id } = useParams();
@@ -14,11 +15,38 @@ function Detail() {
   useEffect(() => {
     getMovie();
   }, []);
-  console.log(movie);
+  const genres = movie.genres;
+  console.log(genres);
   return (
-    <div>
-      <h1>Detail</h1>
-      <h2>Movie : {movie.title}</h2>
+    <div className={styles.Detail__container}>
+      <div className={styles.Detail__box}>
+        <div>
+          <div className={styles.Detail__poster}>
+            <img
+              className={styles.Detail__coverimg}
+              src={movie.medium_cover_image}
+              alt={movie.title}
+            />
+          </div>
+          <div className={styles.Detail__description}>
+            <h2 className={styles.Detail__title}>{movie.title}</h2>
+            <span className={styles.Detail__rating}>
+              rating : {movie.rating} / 10
+            </span>
+            <span className={styles.Detail__runtime}>
+              runtime : {movie.runtime} (min)
+            </span>
+            <ul className={styles.movie__genres}>
+              {genres.map((g) => (
+                <li className={styles.movie__genre} key={g}>
+                  {g}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className={styles.Detail__summary}>summary</div>
+      </div>
     </div>
   );
 }

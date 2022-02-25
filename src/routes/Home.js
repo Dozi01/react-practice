@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClapperboard } from "@fortawesome/free-solid-svg-icons";
 function Home() {
   return (
-    <div>
+    <div className={styles.home__container}>
       {Group_key_arr.map((key) => {
         return (
           <div className={styles.home__slide} key={key}>

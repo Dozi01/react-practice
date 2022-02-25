@@ -39,8 +39,6 @@ function Slide({ ytsapi }) {
     }
     setSlideNum((current) => current - 1);
   };
-
-  console.log(movies);
   return (
     <div className={styles.slide__container}>
       <div className={styles.slide__show}>

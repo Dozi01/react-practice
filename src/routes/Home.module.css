@@ -1,3 +1,7 @@
+.home__container {
+  margin: 48px;
+}
+
 .home__menu {
   display: flex;
   justify-content: center;
