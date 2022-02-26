@@ -1,52 +1,66 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Detail.module.css";
+import Loading from "../components/Loading";
 
 function Detail() {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getMovie = async () => {
     const json = await (
       await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
     ).json();
     setMovie(json.data.movie);
+    setLoading(false);
   };
   useEffect(() => {
     getMovie();
   }, []);
+
   const genres = movie.genres;
-  console.log(genres);
+  const bgImgUrl = movie.background_image_original;
+  console.log(movie);
   return (
-    <div className={styles.Detail__container}>
-      <div className={styles.Detail__box}>
-        <div>
-          <div className={styles.Detail__poster}>
-            <img
-              className={styles.Detail__coverimg}
-              src={movie.medium_cover_image}
-              alt={movie.title}
-            />
+    <div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className={styles.container}>
+          <div className={styles.background}>
+            <img className={styles.Detail_bg} src={bgImgUrl} alt="" />
           </div>
-          <div className={styles.Detail__description}>
-            <h2 className={styles.Detail__title}>{movie.title}</h2>
-            <span className={styles.Detail__rating}>
-              rating : {movie.rating} / 10
-            </span>
-            <span className={styles.Detail__runtime}>
-              runtime : {movie.runtime} (min)
-            </span>
-            <ul className={styles.movie__genres}>
-              {genres.map((g) => (
-                <li className={styles.movie__genre} key={g}>
-                  {g}
-                </li>
-              ))}
-            </ul>
+          <div className={styles.box}>
+            <div className={styles.movieinfo}>
+              <div className={styles.poster}>
+                <img
+                  className={styles.coverimg}
+                  src={movie.medium_cover_image}
+                  alt={movie.title}
+                />
+              </div>
+              <div className={styles.description}>
+                <h2 className={styles.title}>{movie.title}</h2>
+                <div className={styles.rating}>
+                  rating : {movie.rating} / 10
+                </div>
+                <div className={styles.runtime}>
+                  runtime : {movie.runtime} (min)
+                </div>
+                <ul className={styles.movie__genres}>
+                  {genres.map((g) => (
+                    <li className={styles.movie__genre} key={g}>
+                      {g}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className={styles.summary}>{movie.description_full}</div>
           </div>
         </div>
-        <div className={styles.Detail__summary}>summary</div>
-      </div>
+      )}
     </div>
   );
 }
