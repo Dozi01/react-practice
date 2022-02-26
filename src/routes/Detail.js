@@ -21,16 +21,18 @@ function Detail() {
 
   const genres = movie.genres;
   const bgImgUrl = movie.background_image_original;
-  console.log(movie);
+
+  const bgImg = {
+    backgroundImage: `url(${bgImgUrl})`,
+    backgroundSize: "cover",
+  };
+
   return (
     <div>
       {loading ? (
         <Loading />
       ) : (
-        <div className={styles.container}>
-          <div className={styles.background}>
-            <img className={styles.Detail_bg} src={bgImgUrl} alt="" />
-          </div>
+        <div className={styles.container} style={bgImg}>
           <div className={styles.box}>
             <div className={styles.movieinfo}>
               <div className={styles.poster}>

@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import Movie from "../components/Movie";
 import { Link } from "react-router-dom";
-
 import Recommendation from "../components/Recommendation";
 import Slide from "../components/Slide";
 import { Group_obj, Group_key_arr } from "../atom/NavList";
