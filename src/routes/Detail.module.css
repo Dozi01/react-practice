@@ -1,5 +1,5 @@
 .container {
-  color: white;
+  color: #f5f5f5;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 .box {
-  border: solid 2px white;
+  border: solid 2px #f5f5f5;
   border-radius: 8px;
   padding: 24px;
   width: 800px;
@@ -21,14 +21,30 @@
 }
 
 .description {
-  margin-left: 12px;
+  margin-left: 24px;
   padding: 8px;
 }
 
 .title {
   font-size: 32px;
   font-weight: 900;
+  padding: 8px;
 }
+.rating,
+.runtime {
+  padding: 8px;
+  font-size: 18px;
+}
+
 .movie__genres {
   list-style: none;
+  padding: 8px;
+}
+.movie__genre {
+  margin: 4px;
+  font-size: 14px;
+}
+.summary {
+  font-size: 14px;
+  padding: 12px;
 }

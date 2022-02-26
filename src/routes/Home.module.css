@@ -1,11 +1,17 @@
 .home__container {
   margin: 48px;
+  margin-top: 100px;
 }
-
+.home__menu__container {
+  display: flex;
+  justify-content: center;
+}
 .home__menu {
   display: flex;
   justify-content: center;
-  margin: 32px;
+}
+.home__menu:hover {
+  transform: scale(1.1);
 }
 
 .home__icon {

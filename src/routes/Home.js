@@ -12,14 +12,17 @@ function Home() {
       {Group_key_arr.map((key) => {
         return (
           <div className={styles.home__slide} key={key}>
-            <Link to={`/page/${Group_obj[key]}/1`}>
-              <div className={styles.home__menu}>
-                <div className={styles.home__icon}>
-                  <FontAwesomeIcon icon={faClapperboard} />
+            <div className={styles.home__menu__container}>
+              <Link to={`/page/${Group_obj[key]}/1`}>
+                <div className={styles.home__menu}>
+                  <div className={styles.home__icon}>
+                    <FontAwesomeIcon icon={faClapperboard} />
+                  </div>
+                  <h1 className={styles.home__menu__title}>{key}</h1>
                 </div>
-                <h1 className={styles.home__menu__title}>{key}</h1>
-              </div>
-            </Link>
+              </Link>{" "}
+            </div>
+
             <Slide key={key} ytsapi={Group_obj[key]} />
           </div>
         );

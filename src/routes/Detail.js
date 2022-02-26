@@ -26,7 +26,7 @@ function Detail() {
     backgroundImage: `url(${bgImgUrl})`,
     backgroundSize: "cover",
   };
-
+  console.log(movie);
   return (
     <div>
       {loading ? (
@@ -51,6 +51,7 @@ function Detail() {
                   runtime : {movie.runtime} (min)
                 </div>
                 <ul className={styles.movie__genres}>
+                  <strong>genres</strong>
                   {genres.map((g) => (
                     <li className={styles.movie__genre} key={g}>
                       {g}
@@ -59,7 +60,7 @@ function Detail() {
                 </ul>
               </div>
             </div>
-            <div className={styles.summary}>{movie.description_full}</div>
+            <div className={styles.summary}>{movie.description_intro}</div>
           </div>
         </div>
       )}

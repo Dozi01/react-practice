@@ -8,7 +8,7 @@ function Nav() {
     <div>
       <div className={styles.container}>
         <h1 className={styles.title}>
-          <Link to={`/`}>Notflix</Link>
+          <Link to={`/`}>Netflix</Link>
         </h1>
         <div className={styles.Nav__option__list}>
           {Group_key_arr.map((key) => {
@@ -23,15 +23,14 @@ function Nav() {
         </div>
         <div className={styles.icon__list}>
           <div className={styles.icon}>
-            <Link to={`/`}>
+            <a target="_blank" href="https://www.instagram.com/umin.cho/?hl=ko">
               <FontAwesomeIcon icon={faInstagram} />
-            </Link>
+            </a>
           </div>
           <div className={styles.icon}>
-            <Link to={`/`}>
-              {" "}
+            <a target="_blank" href="https://github.com/Dozi01">
               <FontAwesomeIcon icon={faGithub} />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

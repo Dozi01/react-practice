@@ -1,18 +1,20 @@
 .container {
+  width: 100%;
+  padding: 8px 64px;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 64px;
-  background-color: #e0f7fa;
+  background-color: #1a237e;
   z-index: 10;
-
   transition: 0.4s ease;
 }
 
 .container a {
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
 }
 
 .container ul {
@@ -24,6 +26,7 @@
   font-size: 32px;
   letter-spacing: 0.5px;
 }
+
 .Nav__option__list {
   display: flex;
 }
@@ -45,4 +48,7 @@
 .icon {
   font-size: 24px;
   padding: 4px 8px;
+}
+.icon:hover {
+  transform: scale(1.1);
 }
