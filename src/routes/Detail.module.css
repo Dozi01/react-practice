@@ -41,7 +41,7 @@
   padding: 8px;
 }
 .movie__genre {
-  margin: 4px;
+  margin-left: 4px;
   font-size: 14px;
 }
 .summary {

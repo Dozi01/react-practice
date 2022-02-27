@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Recommendation from "../components/Recommendation";
 import Slide from "../components/Slide";
 import { Group_obj, Group_key_arr } from "../atom/NavList";
 import styles from "./Home.module.css";
@@ -20,7 +19,7 @@ function Home() {
                   </div>
                   <h1 className={styles.home__menu__title}>{key}</h1>
                 </div>
-              </Link>{" "}
+              </Link>
             </div>
 
             <Slide key={key} ytsapi={Group_obj[key]} />

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
+import Group from "./routes/Group";
+
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -12,8 +14,9 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/movie/:id" element={<Detail />} />
         <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<Detail />} />
+        <Route path="/page/:id/1" element={<Group />} />
       </Routes>
       <Footer />
     </Router>

@@ -16,7 +16,7 @@ function Slide({ ytsapi }) {
   const getMovies = async () => {
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?${ytsapi}&sort_by=years`
+        `https://yts.mx/api/v2/list_movies.json?${ytsapi}&sort_by=rating`
       )
     ).json();
     setMovies(json.data.movies);
@@ -25,6 +25,7 @@ function Slide({ ytsapi }) {
   useEffect(() => {
     getMovies();
   }, []);
+  console.log(movies);
 
   const onClickR = () => {
     if (slideNum === 8) {

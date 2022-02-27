@@ -50,13 +50,15 @@ function Detail() {
                 <div className={styles.runtime}>
                   runtime : {movie.runtime} (min)
                 </div>
+
                 <ul className={styles.movie__genres}>
-                  <strong>genres</strong>
-                  {genres.map((g) => (
-                    <li className={styles.movie__genre} key={g}>
-                      {g}
-                    </li>
-                  ))}
+                  {genres && <strong>genres</strong>}
+                  {genres &&
+                    genres.map((g) => (
+                      <li className={styles.movie__genre} key={g}>
+                        {g}
+                      </li>
+                    ))}
                 </ul>
               </div>
             </div>
