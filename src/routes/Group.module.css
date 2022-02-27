@@ -1,7 +1,5 @@
 .container {
-  width: 80%;
   margin: 100px auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, auto));
 }

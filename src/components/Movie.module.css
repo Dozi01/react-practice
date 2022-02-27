@@ -45,8 +45,6 @@ a {
   font-size: 14px;
   height: 72px;
   overflow: hidden;
-
-  white-space: nowrap;
 }
 .movie__genre {
   list-style: none;

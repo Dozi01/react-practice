@@ -26,7 +26,7 @@ function Detail() {
     backgroundImage: `url(${bgImgUrl})`,
     backgroundSize: "cover",
   };
-  console.log(movie);
+
   return (
     <div>
       {loading ? (

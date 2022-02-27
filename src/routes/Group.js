@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./Group.module.css";
 import Loading from "../components/Loading";
-import Movie from "../components/Movie";
+import Moviegroup from "../components/Moviegroup";
 
 function Group() {
   const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ function Group() {
   useEffect(() => {
     getMovies();
   }, [group, page]);
-  console.log("group: " + group + " pages:" + page);
+
   return (
     <div>
       {loading ? (
@@ -32,13 +32,15 @@ function Group() {
       ) : (
         <div className={styles.container}>
           {movies.map((movie) => (
-            <Movie
+            <Moviegroup
               key={movie.id}
               id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               summary={movie.summary}
-              genres={movie.genres}
+              runtime={movie.runtime}
+              rating={movie.rating}
+              summary={movie.summary}
             />
           ))}
         </div>

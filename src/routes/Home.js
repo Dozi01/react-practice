@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slide from "../components/Slide";
 import { Group_obj, Group_key_arr } from "../atom/NavList";

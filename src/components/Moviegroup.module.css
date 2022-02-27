@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  margin: 12px 8px;
+  width: 400px;
+  background-color: transparent;
+  border-radius: 8px;
+
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  transition: all 0.4s ease;
+}
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.coverimg {
+  width: 160px;
+  border-radius: 8px;
+}
+
+.description {
+  padding: 12px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 900;
+
+  overflow: hidden;
+}
+
+.runtime,
+.rating,
+.genre {
+  font-size: 12px;
+}
+
+.ratingandruntime {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.runtime {
+  border: 1px solid black;
+  width: 50px;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+}
+
+.summary {
+  font-size: 12px;
+}
