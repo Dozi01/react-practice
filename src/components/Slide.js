@@ -25,7 +25,6 @@ function Slide({ ytsapi }) {
   useEffect(() => {
     getMovies();
   }, []);
-  console.log(movies);
 
   const onClickR = () => {
     if (slideNum === 8) {
