@@ -6,23 +6,27 @@ import Moviegroup from "../components/Moviegroup";
 
 function Group() {
   const [loading, setLoading] = useState(true);
-  const { group, page } = useParams();
+  const { group } = useParams();
   const [movies, setMovies] = useState([]);
+  const movieArr = [];
 
   const getMovies = async () => {
-    const json = await (
-      await fetch(
-        `https://yts.mx/api/v2/list_movies.json?page=${page}&${group}&sort_by=rating`
-      )
-    ).json();
-    setMovies(json.data.movies);
+    for (let i = 1; i < 11; i++) {
+      const json = await (
+        await fetch(
+          `https://yts.mx/api/v2/list_movies.json?page=${i}&${group}&sort_by=rating`
+        )
+      ).json();
+      json.data.movies.map((movie) => movieArr.push(movie));
+    }
+    setMovies(movieArr);
     setLoading(false);
   };
 
   useEffect(() => {
     setLoading(true);
     getMovies();
-  }, [group, page]);
+  }, [group]);
 
   return (
     <div>
