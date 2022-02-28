@@ -27,8 +27,8 @@ Movie.propTypes = {
   id: propTypes.number.isRequired,
   coverImg: propTypes.string.isRequired,
   title: propTypes.string.isRequired,
-  runtime: propTypes.string.isRequired,
-  rating: propTypes.string.isRequired,
+  runtime: propTypes.number.isRequired,
+  rating: propTypes.number.isRequired,
 };
 
 export default Movie;

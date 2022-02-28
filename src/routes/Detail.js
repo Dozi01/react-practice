@@ -32,7 +32,8 @@ function Detail() {
       {loading ? (
         <Loading />
       ) : (
-        <div className={styles.container} style={bgImg}>
+        <div className={styles.container}>
+          <div className={styles.bgimg} style={bgImg}></div>
           <div className={styles.box}>
             <div className={styles.movieinfo}>
               <div className={styles.poster}>

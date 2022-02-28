@@ -10,7 +10,7 @@ function Moviegroup({ id, coverImg, title, runtime, rating, summary }) {
           <img className={styles.coverimg} src={coverImg} alt={title} />
           <div className={styles.description}>
             <div className={styles.title}>
-              {title.length > 50 ? `${title.slice(0, 50)}...` : title}
+              {title.length > 45 ? `${title.slice(0, 45)}...` : title}
             </div>
             <div className={styles.ratingandruntime}>
               <div className={styles.rating}>{rating} / 10</div>
@@ -31,8 +31,8 @@ Moviegroup.propTypes = {
   coverImg: propTypes.string.isRequired,
   title: propTypes.string.isRequired,
   summary: propTypes.string.isRequired,
-  runtime: propTypes.string.isRequired,
-  rating: propTypes.string.isRequired,
+  runtime: propTypes.number.isRequired,
+  rating: propTypes.number.isRequired,
 };
 
 export default Moviegroup;
