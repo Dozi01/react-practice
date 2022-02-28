@@ -55,8 +55,8 @@ function Slide({ ytsapi }) {
                 id={movie.id}
                 coverImg={movie.medium_cover_image}
                 title={movie.title}
-                summary={movie.summary}
-                genres={movie.genres}
+                runtime={movie.runtime}
+                rating={movie.rating}
               />
             ))}
           </div>
