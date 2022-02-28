@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import styles from "./Group.module.css";
 import Loading from "../components/Loading";
 import Moviegroup from "../components/Moviegroup";
@@ -9,12 +8,11 @@ function Group() {
   const [loading, setLoading] = useState(true);
   const { group, page } = useParams();
   const [movies, setMovies] = useState([]);
-  const [slideNum, setSlideNum] = useState(0);
 
   const getMovies = async () => {
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?${page}&${group}&sort_by=rating`
+        `https://yts.mx/api/v2/list_movies.json?page=${page}&${group}&sort_by=rating`
       )
     ).json();
     setMovies(json.data.movies);
@@ -22,6 +20,7 @@ function Group() {
   };
 
   useEffect(() => {
+    setLoading(true);
     getMovies();
   }, [group, page]);
 

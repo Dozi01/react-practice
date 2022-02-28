@@ -49,11 +49,10 @@ function Detail() {
                   rating : {movie.rating} / 10
                 </div>
                 <div className={styles.runtime}>
-                  runtime : {movie.runtime} (min)
+                  runtime : {movie.runtime} min
                 </div>
 
                 <ul className={styles.movie__genres}>
-                  {genres && <strong>genres</strong>}
                   {genres &&
                     genres.map((g) => (
                       <li className={styles.movie__genre} key={g}>
