@@ -11,7 +11,7 @@ function Group() {
   const movieArr = [];
 
   const getMovies = async () => {
-    for (let i = 1; i < 11; i++) {
+    for (let i = 1; i < 2; i++) {
       const json = await (
         await fetch(
           `https://yts.mx/api/v2/list_movies.json?page=${i}&${group}&sort_by=rating`
