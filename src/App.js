@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Detail />} />
-        <Route path="/page/:group/:page" element={<Group />} />
+        <Route path="/page/:group" element={<Group />} />
       </Routes>
       <Footer />
     </Router>

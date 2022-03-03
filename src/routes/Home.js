@@ -11,7 +11,7 @@ function Home() {
         return (
           <div className={styles.home__slide} key={key}>
             <div className={styles.home__menu__container}>
-              <Link to={`/page/${Group_obj[key]}/1`}>
+              <Link to={`/page/${Group_obj[key]}`}>
                 <div className={styles.home__menu}>
                   <div className={styles.home__icon}>
                     <FontAwesomeIcon icon={faClapperboard} />

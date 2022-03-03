@@ -59,7 +59,7 @@ function Nav() {
             return (
               <div className={styles.Link} key={key}>
                 <div className={styles.Link_sep}>
-                  <Link to={`/page/${Group_obj[key]}/1`}>{key}</Link>
+                  <Link to={`/page/${Group_obj[key]}`}>{key}</Link>
                 </div>
               </div>
             );
