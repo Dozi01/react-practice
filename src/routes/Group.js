@@ -8,28 +8,30 @@ function Group() {
   const [loading, setLoading] = useState(true);
   const { group } = useParams();
   const [movies, setMovies] = useState([]);
-  const [page, setpage] = useState(0);
 
+  const [page, setPage] = useState(1);
   const getMovies = async () => {
     const json = await (
       await fetch(
         `https://yts.mx/api/v2/list_movies.json?page=${page}&${group}&sort_by=rating`
       )
     ).json();
+    setMovies((current) => [...current, ...json.data.movies]);
 
-    json.data.movies.map((movie) => movies.push(movie));
-    setMovies(movies);
-
-    setLoading(false);
+    if (loading) setLoading(false);
   };
 
   useEffect(() => {
     getMovies();
   }, [group, page]);
 
+  useEffect(() => {
+    setPage(1);
+    setMovies([]);
+  }, [group]);
+
   const onClick = () => {
-    setpage((current) => current + 1);
-    console.log(page);
+    setPage((current) => current + 1);
   };
 
   return (
