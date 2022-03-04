@@ -30,8 +30,20 @@ function Group() {
     setMovies([]);
   }, [group]);
 
-  const onClick = () => {
-    setPage((current) => current + 1);
+  useEffect(() => {
+    window.addEventListener("scroll", onscroll);
+    return () => {
+      window.removeEventListener("scroll", onscroll); //clean up
+    };
+  }, []);
+
+  const onscroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+    if (scrollTop + clientHeight >= scrollHeight) {
+      setPage((current) => current + 1);
+    }
   };
 
   return (
@@ -52,7 +64,6 @@ function Group() {
               summary={movie.summary}
             />
           ))}
-          <button onClick={onClick}>button</button>
         </div>
       )}
     </div>
