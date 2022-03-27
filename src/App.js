@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
 import Group from "./routes/Group";

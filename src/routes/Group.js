@@ -61,7 +61,6 @@ function Group() {
               summary={movie.summary}
               runtime={movie.runtime}
               rating={movie.rating}
-              summary={movie.summary}
             />
           ))}
         </div>
